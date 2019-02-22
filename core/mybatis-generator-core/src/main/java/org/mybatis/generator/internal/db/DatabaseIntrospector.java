@@ -1,5 +1,5 @@
 /**
- *    Copyright 2006-2018 the original author or authors.
+ *    Copyright 2006-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -615,8 +615,8 @@ public class DatabaseIntrospector {
             // configuration, then some sort of DB default is being returned
             // and we don't want that in our SQL
             FullyQualifiedTable table = new FullyQualifiedTable(
-                    stringHasValue(tc.getCatalog()) ? tc.getCatalog() : atn.getCatalog(),
-                    stringHasValue(tc.getSchema()) ? tc.getSchema() : atn.getSchema(),
+                    stringHasValue(tc.getCatalog()) ? atn.getCatalog() : null,
+                    stringHasValue(tc.getSchema()) ? atn.getSchema() : null,
                     atn.getTableName(),
                     tc.getDomainObjectName(),
                     tc.getAlias(),
